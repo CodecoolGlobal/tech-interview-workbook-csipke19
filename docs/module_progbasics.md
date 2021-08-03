@@ -120,7 +120,7 @@
 #### If you need to access the iterator variable after a for loop, how would you do it in Python?
     The iterator variable only exists while the for loop exists.
 #### What type of elements can a list contain in Python?
-    The list can contain hashable and non-hashable values. Hashable values are floats, intigers, tuples and strings. Non-hashable values are dictionaries, sets and lists.
+    The list can contain any arbitrary objects, which means it can contain anything from string and int to dictionary's, sets or even other lists
 #### What is slice operator in Python and how to use?
     The slice operator is used to cut sequences, like string, tuples and lists. The "slice(start, stop, step)" operator can get 3 different values. First the start index, on which the slicing will start on OR if you give just this value, then the result will be the list's values to the given start index value (if you give 2, then only from 0-2 index will be seen.). The second is the stop index, the given index value will be the point out the last index, !but the given value will not be in the result!. The third value will be the "step", and the given index value will be cut out from the result. If you give the value "1" to the step, then nothing will happen, but if you give it 2, then it will skip over every 2nd index.
 #### What arithmetic operators (+,*,-,/) can be used on lists in Python? What do they do?

@@ -141,6 +141,7 @@ Asynchronous execution is used when the program for example, use a fetch API req
 ### SQL
 
 #### How can you connect your application to a database server? What are the possible ways?
+Pass the database login name, password, host and database name to the code editor (like VSC, PyCharm)
 #### When do you use the DISTINCT keyword in SQL?
 DISTINCT is used when you want only distinct (different) values as a result (like in a COUNT where you only want to count the different values)
 #### Talk about the behavior/goal of these base SQL clauses: WHERE, GROUP BY, HAVING, ORDER BY?
@@ -161,16 +162,28 @@ Examples:
 #### What are the constraints in sql?
 SQL constraints are used to specify rules for data in a table. (like UNIQUE, PRIMARY_KEY, FOREIGN_KEY)
 #### What is a cursor in SQL? Why would you use one?
+A cursor in SQL is a temporary work area created in system memory when a SQL statement is executed.
+We use a cursor when, for example, we need to update records in a database table row by row.
 #### What are database indexes? When to use?
+Indexes are used to quickly locate data without having to search every row in a database table every time a database table is accessed. 
+Indexes help faster data retrieval from the databases. Basically, it speeds up the select queries and where clause.
+DOn't use it when you have only a few data, because it degraded the performance of INSERT and UPDATE queries.
 #### What are database transactions? When to use?
+A transaction is a unit of work that you want to treat as "a whole." It has to either happen in full or not at all.
+Example: transferring money from one bank account to another.
 #### What kind of database relations do you know? How to define them?
-#### You have a table with an “address” field which contains data like “3525, Miskolc, Régiposta 9.” (postcode, city, street name and address). How would you query all records related to Miskolc?
+Database relationships are associations between tables that are created using join statements to retrieve data.
+- One-to-One relationship: Each primary key value relates to none or only one record in the related table.
+- One-to-Many relationship: The primary key table contains only one record that relates to none, one, or many records in the related table.
+- Many-to-Many relationship: Each record in both tables can relate to none or any number of records in the other table. 
+#### You have a table with an “address” field which contains data like “3525, Miskolc, Régiposta 9.” (postcode, city, street name and 		address). How would you query all records related to Miskolc?
 " SELECT address FROM table WHERE adress ILIKE "%miskolc%" "
 #### How would you keep track of what kind of data has changed after an UPDATE or DELETE operation in a table?
 
 ### HTML & CSS
 
 #### What’s the difference between XML, XHTML and HTML?
+While XML is a markup language designed to transfer data between driver hardware, operating systems and different applications, XHTML combines the strengths of XML with HTML and provides a much cleaner and stricter markup language for creating web pages.
 #### How to include a JavaScript file in a webpage?
 With the "script" tag, and you need to give the "src" beside it in the tag, like: "../data/js/usedscript.js"
 #### How to include a CSS file in a webpage?
@@ -192,7 +205,11 @@ UI (User Interface) is when you try to make the webpage appealing to the user's 
 - Make the functions user friendly
 - Plan the route the user will walk on to fulfill his goals.
 #### What is XML, XSLT, DTD?
+XML: XML (Extensible Markup Language) is a markup language similar to HTML. Similiar to JSON, because it was used to transmit data between computers.
+XSLT: XSLT (eXtensible Stylesheet Language Transmission) uses XML as data and can shorten down a table data fill.
+DTD: DTD (Document Type Definition) defines the tags and attributes used in an XML or HTML document.
 #### What is the difference between HTML and XML?
+HTML and XML are related to each other, where HTML displays data and describes the structure of a webpage, whereas XML stores and transfers data.
 
 ### Javascript
 
@@ -221,10 +238,15 @@ JSON (JavaScript Object Notation) is a text-based data format following JavaScri
 #### What type of branching strategy would you use?
 Every new feature needs to be separeted from the main branch
 #### What would you do if you find a bug on the production code (master branch)?
+I make a new branch from the master branch, named after the bug and "bugfix" in the name. 
 #### How can you move changes from one branch to another in GIT?
+git stash
+git checkout {correct-branch}
+git stash pop
 #### How does a VCS help with code reviews?
+VCS (Version Controll System) helps you 
 #### What is your favorite git command? Why?
-push, because it means that i'm done everything I wanted to do and from that point my work is safe on the github.
+push, because it means that i'm done everything I wanted to do and from that point my work will be safe on the github repository.
 #### What does remote/local mean in Git? 
 The project version I have on my computer and not necessarily the same as the one on Github.
 
@@ -258,16 +280,30 @@ Examples
 #### What is JSON? When to use?
 JSON (JavaScript Object Notation) is a text-based data format following JavaScript object syntax. You can use it during API requests to send data to other computers.
 #### What is TCP/IP? What layers does it define, what are they responsible for?
+TCP/IP stands for Transmission Control Protocol/Internet Protocol. TCP/IP is a set of standardized rules that allow computers to communicate on a network such as the internet.
+- Process/Application Layer: Provides the interfaces and protocols needed by the users. 
+- Host-to-Host/Transport Layer: It is responsible for error-free, end-to-end delivery of data from the source host to the destination host.
+- Internet Layer: Logical transmission of data packets over the internet.
+- Network Access/Link Layer: This layer is mainly responsible for the transmission of the data between two devices on the same network.
 #### What’s the difference between TCP and UDP?
-TCP is ceóonnection oriented while UDP is a connetionless protocoll. TCP is slower, but you don't suffer packet losses while with UDP, you do.
+TCP is connection oriented while UDP is a connetionless protocoll. TCP is slower, but you don't suffer packet losses while with UDP, you do.
 #### How does an HTTP Request look like? What are the most relevant HTTP header fields?
+"GET /software/htp/cics/index.html HTTP/1.1"
+HTTP headers let the client and the server pass additional information with an HTTP request or response.
 #### How does an HTTP Response look like? What are the most relevant HTTP header fields?
+Request URL: https://developer.mozilla.org/favicon-48x48.97046865.png
+Request Method: GET
+Status Code: 200 
+Remote Address: 13.32.12.71:443
+Referrer Policy: strict-origin-when-cross-origin
 #### What is DNS? How does it work?
 DNS (Domain Name System) allows us to call a webpage by typing a simple domain name (www.promanproject.com) instead of the IP adress (10.142.43.127)
 #### What is a web server?
 A web server is a computer that runs websites.
 #### Explain the client-server architecture.
+Client–server model is a distributed application structure that partitions tasks or workloads between the providers of a resource or service, called servers, and service requesters, called clients.
 #### What would you use a session for?
+It is used to store data for a short amount of time (like a table page counter or click counter)
 #### What would you use a cookie for?
 For example, cookie is used to keep a user logged in to a website for a longer period (or permanently)
 

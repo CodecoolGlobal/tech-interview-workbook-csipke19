@@ -14,7 +14,7 @@ fail fast systems desing is basiclly, when we throw an exception instead of tryi
 #### How to find the middle element of singly linked list in O(n)?
 We need to create a pointer, which is pointing to the head of the linked list and a field that counts the size of list. After that we need to iterate over the linked list, until the pointer reaches the end of the it, and with every step we add 1 to the counter field. We set the p to the head of the linked list again, but now we only go to the half of the counter field size (e.g.: 10/2) and then we can return the value of the pointer as a result.
 #### Given an array of integers going from 1 to 100 (both inclusive) there is a duplicated entry. How to find it?
-We need to create an integer variable (with the name like "currentNumber"), and then we check every number in the array with a for cycle ( for (int number : numbers)), and when number = currentNumber, then we return the number
+We need to create an integer variable (with the name like "currentNumber"), and then we check every number in the array with a for cycle ( for (int number : numbers)), and if number = currentNumber, then we return the number
 #### What is a linked list? How to find if a linked list has a loop?
 If we create a HashSet, we put the Nodes in it and we check them, if they are already in the collection or not. If they are, then it's a loop, if not then it isn't.
 #### What is the Big O time complexity of the common operations in an ArrayList, LinkedList, HashMap? And of a bubble sort, quicksort, finding items in a Binary Search tree?
@@ -35,7 +35,7 @@ Normalization is the process of organizing the data in the database. There are t
 ### Other
 
 #### What is a garbage collector, in a nutshell?
-Garbage collector is a system that can be found in programming languages like Java and C#. The garbage collector does what other need to do on the C language manualy, which is memory management. The GC cleanes the memory from variables that we don't use anymore anymore in the program's runtime.
+Garbage collector is a system that can be found in programming languages like Java and C#. The garbage collector does what other need to do on the C language manualy, which is memory management. After a certain time, the garbage collector cleanes the memory from variables that we don't use anymore anymore in the program's runtime.
 
 ## Programming paradigms
 
@@ -53,7 +53,7 @@ Classes in Java are used as a blueprint for the object creation.
 #### What is an object?
 Objects (or instances) are members of a Class, with identity, behavior (method) and state (fields).
 #### What is a constructor?
-The constructor creates the instances from a Class. We can have more constructores for a Class, but it depends on the programmer and the usage of the Class.
+The constructor creates the instances from a Class. We can have more constructors for a Class, but it depends on the programmer and the usage of the Class.
 #### Do we require parameter for constructors?
 We don't have to give parameters to the constructor, unless we want to make the instances more unique.
 #### What is an interface?
@@ -71,9 +71,9 @@ Instantiation: When you create an instance from a class via a constructor
 Attribute: It's basically a field, but in an another term.
 Method: A collection of statements, that perform a specific task, and it returns a result (if the return type is not a "void" of course) to the caller.
 #### Could we access a static variable (or method) from a non-static method? Why?
-We can, because a static variable can be accessed from anywhere even without instantiation and so the non-static method can word with it.
+We can, because a can only call non-static methods if we have an instance from the class where we can find it, so if we use a static method in it.
 #### Could we access a non-static variable (or method) from a static method? Why?
-We can, if we create a new object from where the non static variable came from and we create this instance inside of the static method.
+We can't, because we don't need to instanciate a class to access a static method, but we use methods or field which are may be not instanciated.
 #### How many instances you have of a static variable of a given class?
 A static can't have more instances than 1.
 #### Why is it not a good practice to write a lot of static methods?
